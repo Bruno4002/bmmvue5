@@ -11,7 +11,17 @@ const contador = ref(10)
  function resetar() {
   contador.value = 0
  }
+ const rawHtml = '<span style="color: red">Este é um texto em vermelho</span>'
 
+ const numero = 1
+    const ok = true
+    const mensagem = 'programar'
+
+    const mensagem2 = 'programar'
+
+function inverter(texto) {
+    return texto.split('').reverse().join('')
+}
 </script>
 
 <template>
@@ -19,6 +29,12 @@ const contador = ref(10)
   <button @click="decrementar">MENGO-</button>
   <button @click="resetar">MAIORC</button>
   <p>Valor do contador: {{ contador }}</p>
+  <p>Usando interpolação de textos: {{rawHtml}}</p>
+    <p>Usando v-html: <span v-html="rawHtml"></span></p>
+    {{ numero + 1 }}
+{{ ok ? 'Sim' : 'Não' }}
+{{ mensagem.split('').reverse().join('') }}
+<p>{{ inverter(mensagem2) }}</p>
 </template>
 
 <style scoped>
